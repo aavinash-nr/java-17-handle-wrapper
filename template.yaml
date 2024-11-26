@@ -17,7 +17,7 @@ Resources:
     Properties:
       FunctionName: java-17-wrapper-handler
       CodeUri: HelloWorldFunction
-      Handler: com.newrelic.java.HandlerWrapper::handleRequest
+      Handler: helloworld.HandlerAgent::handleRequest
       Runtime: java17
       Architectures:
         - x86_64
@@ -26,8 +26,8 @@ Resources:
         Variables:
           NEW_RELIC_LAMBDA_HANDLER: helloworld.App::handleRequest
           # Distributed tracing needs your account ID, and your trusted account ID
-          NEW_RELIC_ACCOUNT_ID: <your_account_id>
-          NEW_RELIC_LICENSE_KEY: <your_license_key>
+          NEW_RELIC_ACCOUNT_ID: <YOUR_ACCOUNT_ID>
+          NEW_RELIC_LICENSE_KEY: <YOUR_LICENSE_KEY>
       Layers:
         - arn:aws:lambda:us-east-1:466768951184:layer:NewRelicJava17:10
 Outputs:

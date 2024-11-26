@@ -3,11 +3,12 @@ package helloworld;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
-public class App implements RequestHandler<Object, Object> {
-    private final HandlerAgent handlerAgent = new HandlerAgent();
-
-    @Override
+public class App  {
     public Object handleRequest(Object input, Context context) {
-        return handlerAgent.handleRequest(input, context);
+        // Log the "Hello World" message
+        System.out.println("Hello World");
+        // Return the "Hello World" message
+        return "Hello World";
     }
+
 }
